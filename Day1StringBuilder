@@ -1,0 +1,31 @@
+
+public class StringsTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		long startTime = System.currentTimeMillis();
+		
+		
+		StringBuilder sb = new StringBuilder();
+		for (int i =0; i < 100000; i++)
+			sb.append("abc");
+		
+		System.out.println("StringBuilder time: " + (System.currentTimeMillis() - startTime));
+		
+		String s = "";
+		for (int i = 0; i < 100000; i++)
+			s+="abc";
+		
+		System.out.println("String time: " + (System.currentTimeMillis() - startTime));
+
+		
+		//lesson here: we've all learned basics of programming but we'll learn how to code more efficiently 
+		//Strings are good if you're not going to modify them; if you're going to change them a lot, StringBuilder is a much better choice 
+		
+		String s2 = "abd0" + (9-1) + "iii" + s.substring(1,6);
+		
+		//^ this uses stringBuilder without even knowing 
+	}
+
+}
