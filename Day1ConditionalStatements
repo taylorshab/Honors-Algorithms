@@ -1,0 +1,46 @@
+
+public class Day1Test {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+int x = 0, y = 34; 
+if (x>8)
+	y=9;
+else
+	y=0;
+
+//conditional expression
+	y = (x>8) ? 9 : 0;
+	y = (x>0) ? x : -x;
+	System.out.println(y);
+	
+
+	y = (x%2 == 1 || x%2 == -1) ? 1 : 0;
+	System.out.println(y);
+	
+	
+	boolean equals; 
+	// if x==y equals = true else false 
+	
+	equals = (x==y) ? true : false;
+	//or 
+	
+	equals = (x==y);
+	
+	System.out.println(equals);
+	
+	//print "even" if x is even else print "odd" 
+	
+	System.out.println((x%2 == 0) ? "even" : "odd");
+	
+	int score = 87; 
+	
+	//print "A", "B", "C" 
+	
+	System.out.println((score >= 90) ? "A" : (score>= 80 && score<=89) ? "B" : (score>=70 && score<=79) ? "C" : "F");
+	
+	
+
+	}
+
+}
