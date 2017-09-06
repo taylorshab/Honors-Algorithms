@@ -1,4 +1,3 @@
-import java.util.Random;
 
 
 public class HW1StringBuilder {
@@ -10,8 +9,6 @@ public class HW1StringBuilder {
 
 StringBuilder sb = new StringBuilder();
 
-
-Random r = new Random();
 
 int rnd; 
 
