@@ -1,0 +1,46 @@
+import java.util.Random;
+
+
+public class HW1StringBuilder {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+
+StringBuilder sb = new StringBuilder();
+
+
+Random r = new Random();
+
+int rnd; 
+
+char random_Char;
+
+
+
+for (int i = 0; i < 1111; i++)
+{
+	
+  rnd = Math.abs((int) (Math.random() * 126));
+  
+
+	
+ random_Char = (char) (33 + rnd);
+     
+ sb.append(random_Char);   
+   
+  
+ if (i > 0 && (i % 100 == 0)) {
+     sb.append("\n");
+ }
+}
+
+System.out.println(sb);
+
+	}
+
+
+
+
+}
