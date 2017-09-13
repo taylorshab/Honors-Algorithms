@@ -1,0 +1,99 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package circlelinehomework;
+
+import javafx.application.Application;
+import javafx.beans.binding.Bindings;
+import javafx.beans.binding.DoubleBinding;
+import javafx.beans.value.ObservableValue;
+import javafx.geometry.Point2D;
+import javafx.scene.Scene;
+import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.shape.Circle;
+import javafx.scene.shape.Line;
+import javafx.scene.text.Text;
+import javafx.scene.text.TextAlignment;
+import javafx.stage.Stage;
+
+/**
+ *
+ * @author taylorshabani
+ */
+public class CircleLineHomework extends Application {
+    
+    public void start(Stage primaryStage) {
+     
+        
+        
+        Circle circle1 = new Circle(15, Color.AQUAMARINE);
+        
+        
+        //circle1.setCenterX(400.0f);
+        //circle1.setCenterY(500.0f);
+        //circle1.setRadius(15.0f);
+        
+        Circle circle2 = new Circle(15, Color.BLUEVIOLET);
+        
+        Pane root = new Pane();
+      
+        root.getChildren().add(circle1);
+        root.getChildren().add(circle2);
+        
+        
+        int a = (int)(Math.random()*250);
+        int b = (int)(Math.random()*250);
+        
+         circle1.setTranslateX(a);
+         circle1.setTranslateY(b);
+         
+        int c = (int)(Math.random()*250);
+        int d = (int)(Math.random()*250);
+         
+         circle2.setTranslateX(c);
+         circle2.setTranslateY(d);
+         
+         int d1 = Math.abs(a-c);
+        int d2 = Math.abs(b-d);
+        double power = (Math.pow(d1,2))+ (Math.pow(d2,2));
+        int rt = (int)(Math.sqrt(power));
+        String answer = String.valueOf(rt);
+        int xmid = (a+c)/2;
+        int ymid = (b+d)/2;
+
+
+         Line line = new Line();
+         Text t1 = new Text(xmid,ymid,answer);         
+         
+        line.startXProperty().bind(circle1.centerXProperty().add(circle1.translateXProperty()));
+        line.startYProperty().bind(circle1.centerYProperty().add(circle1.translateYProperty()));
+        line.endXProperty().bind(circle2.centerXProperty().add(circle2.translateXProperty()));
+        line.endYProperty().bind(circle2.centerYProperty().add(circle2.translateYProperty()));
+        
+       
+        
+        root.getChildren().add(line);
+        root.getChildren().add(t1);
+        
+        Scene scene = new Scene(root, 300, 250);
+        
+        
+        
+        primaryStage.setTitle("Hello World!");
+        primaryStage.setScene(scene);
+        primaryStage.show();
+       
+    }
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        launch(args);
+    }
+    
+}
